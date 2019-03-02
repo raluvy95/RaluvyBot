@@ -87,7 +87,9 @@ class Text():
 
         @commands.command(aliases=['poll'])
         @commands.cooldown(1, 5, commands.BucketType.user)
-        async def vote(self, ctx, *, message):
+        async def vote(self, ctx, *, message=None):
+              if message is None:
+                return await ctx.send("**Please use `,vote [question]`!**")
               em = discord.Embed(color=discord.Color.blue())
               em.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
               em.add_field(name="Question:", value=message)
