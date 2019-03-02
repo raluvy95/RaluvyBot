@@ -295,6 +295,16 @@ class Info():
             em = discord.Embed(color=discord.Colour.orange())
             em.set_image(url = f"{emoji.url}")
             await ctx.send(embed=em)
+        
+        @commands.command(aliases=['avdefault', 'avatard', 'avatar-default', 'avd'])
+        @commands.cooldown(1, 5, commands.BucketType.user)
+        async def avatardefault(self, ctx, member: discord.Member=None):
+            if member is None:
+                 member = ctx.author
+            owo = member.default_avatar_url
+            em = discord.Embed(description=f'{member.mention}\'s [default avatar]({owo})', color=discord.Color.blurple())
+            em.set_image(url=owo)
+            await ctx.send(embed=em)
 
         @commands.command(aliases=['emoji_info', 'emoji info'])
         @commands.cooldown(1, 5, commands.BucketType.user)
