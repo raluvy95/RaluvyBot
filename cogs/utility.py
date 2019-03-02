@@ -40,11 +40,11 @@ class Utility():
         async def help(self, ctx):
             embed = discord.Embed(title=f"All commands (Total: {len(ctx.bot.commands)})", description="Visit our [website]( http://raluvybot.coolpage.biz/ ) for more information about the commands!\nMore question? Join [Support Server!]( https://discordapp.com/invite/bazhjYQ )", color=0xe67e22)
             embed.add_field(name="<a:ablobdancewhite:464794007755685898> Fun", value="`8ball`  `gay`  `dice`  `slots`  `xd`  `choose`  `dogfact`   `mineswepper`  `catfact`  `emoji`  `respect`  `kill`", inline=False)
-            embed.add_field(name=":ok: Text", value="`lenny`  `reverse`  `shrug`  `blobdance`  `jesussay`  `clap`  `sayd`  `say`  `space`  `owo`  `wumpus`  `parrot`", inline=False)
+            embed.add_field(name=":ok: Text", value="`lenny`  `reverse`  `shrug`  `blobdance`  `vote`  `jesussay`  `clap`  `sayembed`  `sayd`  `say`  `space`  `owo`  `wumpus`  `parrot`", inline=False)
             embed.add_field(name=":hammer:  Moderation", value="`kick`  `ban`  `nickname`  `softban`  `purge`  `role`", inline=False)
             embed.add_field(name=":mountain_snow:  Images", value="`lick`  `slap`  `pat`  `shiba`  `cat`  `dog`  `hug`  `cursed`  `pika`  `achievement`  `meme`  `kiss`  `doge`  `logo`", inline=False)
             embed.add_field(name=":information_source: Info", value="`emojiinfo`  `status`  `roleinfo`  `membercount`  `serverinfo`  `pokemon`  `userinfo`  `stats`", inline=False)
-            embed.add_field(name=":pushpin: Utility", value="`ping`  `uptime`  `vote`  `randomnumber`  `flipcoin`  `avatar`  `avatardefault`  `support`  `emojiavatar`  `search`  `invite`", inline=False)
+            embed.add_field(name=":pushpin: Utility", value="`ping`  `uptime`  `dbl`  `randomnumber`  `flipcoin`  `avatar`  `avatardefault`  `support`  `emojiavatar`  `search`  `invite`", inline=False)
             embed.set_footer(text='Use , before using commands')
             embed.timestamp = datetime.datetime.utcnow()
             try:
