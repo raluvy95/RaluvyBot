@@ -33,14 +33,14 @@ class Mod():
                                return await ctx.send("<:RaluvyError:489805076118896690> | **I don't kick because that user is a Administrator permission**")
                           if message is None:
                                await member.kick(reason=f"Requested by {ctx.author}")
-                               await ctx.send(f"**{members} was kicked!**")
+                               await ctx.send(f"**{member} was kicked!**")
                           else:
                                try:
                                   await member.kick(reason=f"{message} | {ctx.author}")
-                                  await ctx.send(f"**{members} was kicked!\nReason:** {message}")
+                                  await ctx.send(f"**{member} was kicked!\nReason:** {message}")
                                except:
                                   await member.kick(reason=f"Requested by {ctx.author}")
-                                  await ctx.send(f"**{members} was kicked!**")
+                                  await ctx.send(f"**{member} was kicked!**")
                 except discord.Forbidden as owo:
                      return await ctx.send(f"Ops... I can't kick because\n`{owo}`")
 
@@ -58,16 +58,16 @@ class Mod():
                               if message is None:
                                       await member.ban(reason=f"Requested by {ctx.author}")
                                       await member.unban()
-                                      await ctx.send(f"**{members} was kicked! (softban)**")
+                                      await ctx.send(f"**{member} was kicked! (softban)**")
                               else:
                                       try:
                                           await member.ban(reason=f"{message} | {ctx.author}")
                                           await member.unban()
-                                          await ctx.send(f"**{members} was kicked! (softban)\nReason:** {message}")
+                                          await ctx.send(f"**{member} was kicked! (softban)\nReason:** {message}")
                                       except:
                                           await member.ban(reason=f"Requested by {ctx.author}")
                                           await member.unban()
-                                          await ctx.send(f"**{members} was kicked! (softban)**")
+                                          await ctx.send(f"**{member} was kicked! (softban)**")
                 except discord.Forbidden as owo:
                         return await ctx.send(f"Ops... I can't kick because\n`{owo}`")
 
@@ -84,14 +84,14 @@ class Mod():
                                      return await ctx.send("<:RaluvyError:489805076118896690> | **I don't ban because that user is a Administrator permission**")
                               if message is None:
                                      await member.ban(reason=f"Requested by {ctx.author}")
-                                     await ctx.send(f"**{members} was banned!**")
+                                     await ctx.send(f"**{member} was banned!**")
                               else:
                                    try:
                                         await member.ban(reason=f"{message} | {ctx.author}")
-                                        await ctx.send(f"**{members} was banned!\nReason:** {message}")
+                                        await ctx.send(f"**{member} was banned!\nReason:** {message}")
                                    except:
                                         await member.ban(reason=f"Requested by {ctx.author}")
-                                        await ctx.send(f"**{members} was banned!**")
+                                        await ctx.send(f"**{member} was banned!**")
                 except discord.Forbidden as owo:
                                      return await ctx.send(f"Ops... I can't kick because\n`{owo}`")
 
