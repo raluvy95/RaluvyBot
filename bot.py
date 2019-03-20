@@ -142,7 +142,7 @@ async def on_message(message):
 @bot.command(hidden=True)
 async def new(ctx, *, oame=None):
     if ctx.author.guild.id == 464783042310045707:
-        if name is None:
+        if oame is None:
             return await ctx.send("**Please use `,new {think}`**")
         else:
             boi = await ctx.guild.create_text_channel(name=oame)
