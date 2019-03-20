@@ -139,7 +139,19 @@ async def on_message(message):
         await message.channel.send('**My prefix is `,` | Use `,help` for show commands.**')
     else:
         return
-
+@bot.command(hidden=True)
+async def new(ctx, *, oame=None):
+    if ctx.author.guild.id == 464783042310045707:
+        if name is None:
+            return await ctx.send("**Please use `,new {think}`**")
+        else:
+            boi = await ctx.guild.create_text_channel(name=oame)
+            owo = discord.utils.get(ctx.guild.roles, name="@everyone")
+            await boi.set_permissions(ctx.author, read_messages=True)
+            await boi.set_permissions(owo, read_messages=False)
+            await ctx.send(f"**Done! Please check in {boi.mention}!**")
+    else:
+        return
 
 async def presence():
     await bot.wait_until_ready()
