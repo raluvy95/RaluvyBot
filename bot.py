@@ -151,13 +151,13 @@ async def new(ctx, *, oame=None):
             await boi.set_permissions(owo, read_messages=False)
             await ctx.send(f"**Done! Please check in {boi.mention}!**")
             if oame == "grad":
-                await boi.send(ctx.author.mention, "```1. Nume si varsta?\n2. Ce level ai?(mee6)\n3. Esti singur ca esti activ(a)?\n4. Ai citit reguli?```\n**Minim 10 ani si level 3 mee6**")
+                await boi.send(f"{ctx.author.mention},```1. Nume si varsta?\n2. Ce level ai?(mee6)\n3. Esti singur ca esti activ(a)?\n4. Ai citit reguli?```\n**Minim 10 ani si level 3 mee6**")
             if oame == "designer" or oame == "desiger":
-                await boi.send(ctx.author.mention, "```1. Nume si varsta?\n2. Poza facut de tn?\n3. Expermenta?\n4. Ai citit reguli?```")
+                await boi.send(f"{ctx.author.mention}, ```1. Nume si varsta?\n2. Poza facut de tn?\n3. Expermenta?\n4. Ai citit reguli?```")
             if oame == "youtube" or oame == "yt":
-                await boi.send(ctx.author.mention, "```1. Nume si varsta?\n2. Cati abonati ai?\n3.Nume canalul tau?\n4. Faci promovare la acest sv?(sincer)\n5. Ai citit reguli?```\n**Minim 100 de abonati!**")
+                await boi.send(f"{ctx.author.mention}, ```1. Nume si varsta?\n2. Cati abonati ai?\n3.Nume canalul tau?\n4. Faci promovare la acest sv?(sincer)\n5. Ai citit reguli?```\n**Minim 100 de abonati!**")
             if oame == "partner" or oame == "partneriat":
-                await boi.send(ctx.author.mention, "```1. Nume si varsta?\n2. Cati membri ai (fara boti)?\n3. Cati boti ai?\n4. Nume server-ul?\n5. Ai citit reguli?```\n**Minim 50+ de membri fara boti!**")
+                await boi.send(f"{ctx.author.mention}, ```1. Nume si varsta?\n2. Cati membri ai (fara boti)?\n3. Cati boti ai?\n4. Nume server-ul?\n5. Ai citit reguli?```\n**Minim 50+ de membri fara boti!**")
             
 
     else:
