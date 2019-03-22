@@ -141,6 +141,13 @@ class Info():
                   d = "No"
             if member.is_on_mobile():
                   d = "Yes"
+            e = member.created_at
+            f = ctx.message.created_at
+            h = f-e
+            i = member.joined_at
+            j = i-f
+            joinages = j.age
+            ages = h.days
             try:
                embed = discord.Embed(title=f"{member}'s info", color=discord.Colour.blue())
                embed.set_author(name="Who is?")
@@ -152,8 +159,8 @@ class Info():
                embed.add_field(name="Tag", value=member.discriminator)
                embed.add_field(name="Top Role", value=member.top_role)
                embed.add_field(name="Nick", value=member.nick)
-               embed.add_field(name="Joined", value=member.joined_at.strftime("%A, %B %d %Y @ %H:%M:%S %p"))
-               embed.add_field(name="Created at", value=member.created_at.strftime("%A, %B %d %Y @ %H:%M:%S %p"))
+               embed.add_field(name="Joined", value=f"{i.strftime('%A, %B %d %Y @ %H:%M:%S %p')} ({joinages} days)")
+               embed.add_field(name="Created at", value=f"{e.strftime('%A, %B %d %Y @ %H:%M:%S %p')} ({ages} days)")
                embed.add_field(name="Roles", value=', '.join(g.name for g in member.roles))
                embed.set_thumbnail(url=member.avatar_url)
                embed.set_footer(text=f'ID: {member.id}')
@@ -170,8 +177,8 @@ class Info():
                embed.add_field(name="Tag", value=member.discriminator)
                embed.add_field(name="Top Role", value=member.top_role)
                embed.add_field(name="Nick", value=member.nick)
-               embed.add_field(name="Joined", value=member.joined_at.strftime("%A, %B %d %Y @ %H:%M:%S %p"))
-               embed.add_field(name="Created at", value=member.created_at.strftime("%A, %B %d %Y @ %H:%M:%S %p"))
+               embed.add_field(name="Joined", value=f"{i.strftime('%A, %B %d %Y @ %H:%M:%S %p')} ({joinages} days)")
+               embed.add_field(name="Created at", value=f"{e.strftime('%A, %B %d %Y @ %H:%M:%S %p')} ({ages} days)")
                embed.add_field(name="Roles", value="This user's roles is too many.")
                embed.set_thumbnail(url=member.avatar_url)
                embed.set_footer(text=f'ID: {member.id}')
