@@ -146,7 +146,7 @@ class Info():
             h = f-e
             i = member.joined_at
             j = i-f
-            joinages = j.age
+            joinages = j.days
             ages = h.days
             try:
                embed = discord.Embed(title=f"{member}'s info", color=discord.Colour.blue())
