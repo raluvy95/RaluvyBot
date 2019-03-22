@@ -145,7 +145,7 @@ class Info():
             f = ctx.message.created_at
             h = f-e
             i = member.joined_at
-            j = i-f
+            j = f-i
             joinages = j.days
             ages = h.days
             try:
