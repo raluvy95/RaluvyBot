@@ -188,6 +188,7 @@ class Info():
         @commands.command(aliases=["user", "user-days", "user_days"])
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def userdays(self, ctx, member: int=None):
+            bot = self.bot
             if member is None:
                 member = ctx.author.id
             try:
