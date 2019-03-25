@@ -185,19 +185,31 @@ class Info():
                embed.timestamp = datetime.datetime.utcnow()
                return await ctx.send(embed=embed)
         
-        @commands.command(aliases=["user-days", "days", "user_days", "day"])
+        @commands.command(aliases=["user", "user-days", "user_days"])
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def userdays(self, ctx, member: int=None):
             if member is None:
-                return await ctx.send("**Please type with `user id`**")
-            if member < 18:
-                return await ctx.send("**User id is invalid.**")
-            a = bot.get_user_info(member)
-            b = a.created_at
-            c = f
-            em = discord.Embed(title=f"{a.display_name}'s days age", color=discord.Color.blue())
-            em.add_field(name="Created", value=a.created_at
+                member = ctx.author.id
+            try:
+               a = await bot.get_user_info(member)
+               b = a.created_at
+               c = ctx.message.created_at
+               d = c-b
+               em = discord.Embed(title=f"{a.display_name}'s days age", color=discord.Color.blue())
+               em.add_field(name="Name", value=a.display_name, inline=True)
+               em.add_field(name="Created", value=b.strftime('%A, %B %d %Y @ %H:%M:%S %p'), inline=True)
+               em.add_field(name="Account age", value=f"{d.days} days", inline=True)
+               em.add_field(name="Avatar URL", value=f"[Link]({a.avatar_url})", inline=True)
+               em.set_footer(text=f"Requested by {ctx.author.name}")
+               em.set_thumbnail(url=a.avatar_url)
+               await ctx.send(embed=em)
+            except discord.errors.NotFound:
+               return await ctx.send("**User ID is invalid or not found... Please try again!**")
+            except SyntaxError, AttributeError:
+               return await ctx.send("**Please use `,userdays [user id]`**")
 
+               
+  
         @commands.command(aliases=['userstatus', 'user-status', 'statususer', 'status-user'])
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def status(self, ctx, member: discord.Member=None):
