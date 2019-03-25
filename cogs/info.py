@@ -184,7 +184,19 @@ class Info():
                embed.set_footer(text=f'ID: {member.id}')
                embed.timestamp = datetime.datetime.utcnow()
                return await ctx.send(embed=embed)
-
+        
+        @commands.command(aliases=["user-days", "days", "user_days", "day"])
+        @commands.cooldown(1, 5, commands.BucketType.user)
+        async def userdays(self, ctx, member: int=None):
+            if member is None:
+                return await ctx.send("**Please type with `user id`**")
+            if member < 18:
+                return await ctx.send("**User id is invalid.**")
+            a = bot.get_user_info(member)
+            b = a.created_at
+            c = f
+            em = discord.Embed(title=f"{a.display_name}'s days age", color=discord.Color.blue())
+            em.add_field(name="Created", value=a.created_at
 
         @commands.command(aliases=['userstatus', 'user-status', 'statususer', 'status-user'])
         @commands.cooldown(1, 5, commands.BucketType.user)
