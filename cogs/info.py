@@ -205,9 +205,10 @@ class Info():
                await ctx.send(embed=em)
             except discord.errors.NotFound:
                return await ctx.send("**User ID is invalid or not found... Please try again!**")
-            except SyntaxError, AttributeError:
+            except SyntaxError:
                return await ctx.send("**Please use `,userdays [user id]`**")
-
+            except AttributeError:
+               return await ctx.send("**Ops... I got an error! Try again later!**")
                
   
         @commands.command(aliases=['userstatus', 'user-status', 'statususer', 'status-user'])
