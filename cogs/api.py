@@ -55,11 +55,11 @@ class API():
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def cat(self, ctx):
                 async with aiohttp.ClientSession() as cs:
-                        async with cs.get('http://aws.random.cat/meow') as r:
+                        async with cs.get('https://some-random-api.ml/img/cat') as r:
                                 res = await r.json()
                                 embed = discord.Embed(color=0x000000)
                                 embed.title = "\U0001f431 Meoww...!"
-                                embed.set_image(url=res['file'])
+                                embed.set_image(url=res['link'])
                                 embed.set_footer(text=f"{self.bot.user.name}")
                                 embed.timestamp = datetime.datetime.utcnow()
                                 await ctx.send(embed=embed)
@@ -69,7 +69,7 @@ class API():
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def meme(self, ctx):
                 async with aiohttp.ClientSession() as cs:
-                        async with cs.get("https://api-to.get-a.life/meme") as r:
+                        async with cs.get("https://some-random-api.ml/meme") as r:
                                 res = await r.json()
                                 embed = discord.Embed(color=discord.Colour.red())
                                 embed.title = (res['text'])
@@ -105,7 +105,7 @@ class API():
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def pikachu(self, ctx):
                 async with aiohttp.ClientSession() as cs:
-                        async with cs.get("https://api-to.get-a.life/pikachuimg") as r:
+                        async with cs.get("https://some-random-api.ml/pikachuimg") as r:
                                 res = await r.json()
                                 embed = discord.Embed(color=discord.Colour.red())
                                 embed.title = 'Pika!'
@@ -118,7 +118,7 @@ class API():
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def catfacts(self, ctx):
                 async with aiohttp.ClientSession() as cs:
-                        async with cs.get("https://api-to.get-a.life/catfact") as r:
+                        async with cs.get("https://some-random-api.ml/facts/cat") as r:
                                 res = await r.json()
                                 await ctx.send(f":cat: **Did you know?**\n{res['fact']}")
                                                
@@ -126,7 +126,7 @@ class API():
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def dogfacts(self, ctx):
                 async with aiohttp.ClientSession() as cs:
-                        async with cs.get("https://api-to.get-a.life/dogfact") as r:
+                        async with cs.get("https://some-random-api.ml/facts/dog") as r:
                                 res = await r.json()
                                 await ctx.send(f":dog: **Did you know?**\n{res['fact']}")
 
