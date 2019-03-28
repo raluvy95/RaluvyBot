@@ -32,8 +32,11 @@ class Info():
                       hoist = "Yes"
                 else:
                       hoist = "No"
+                a = role.created_at
+                b = ctx.message.created_at
+                c = b-a
                 embed = discord.Embed(title=role.name, color=role.color)
-                embed.add_field(name="Created at", value=role.created_at.strftime("%A, %B %d %Y @ %H:%M:%S %p"), inline=True)
+                embed.add_field(name="Created at", value=f'{a.strftime("%A, %B %d %Y @ %H:%M:%S %p")} ({c.days} days ago)', inline=True)
                 embed.add_field(name="Mentionable", value=mention, inline=True)
                 embed.add_field(name="ID", value=role.id, inline=True)
                 embed.add_field(name="Color", value=role.color, inline=True)
@@ -284,6 +287,9 @@ class Info():
               if i.status.name == 'dnd':
                   dnd += 1
               g = online + idle + dnd
+            m = ctx.guild.created_at
+            n = ctx.message.created_at
+            o = n-m
             em = discord.Embed(color=discord.Colour.orange())
             em.add_field(name='Name', value=f'{ctx.author.guild.name}', inline=True)
             em.add_field(name='Owner', value=f'{ctx.author.guild.owner.mention} [{ctx.author.guild.owner.id}]', inline=True)
@@ -296,7 +302,7 @@ class Info():
             em.add_field(name='Bots', value=f'{c}', inline=True)
             em.add_field(name='People', value=f'{a}', inline=True)
             em.add_field(name='Online', value=f'{g}', inline=True)
-            em.add_field(name='Created at', value=ctx.guild.created_at.strftime("%A, %B %d %Y @ %H:%M:%S %p"), inline=True)
+            em.add_field(name='Created at', value=f'{m.strftime("%A, %B %d %Y @ %H:%M:%S %p")} ({o.days} days ago)', inline=True)
             em.add_field(name='Region', value=ctx.guild.region, inline=True)
             em.set_thumbnail(url=ctx.guild.icon_url)
             em.set_footer(text=f'ID: {ctx.guild.id}')
@@ -342,7 +348,10 @@ class Info():
         @commands.command(aliases=['emoji_info', 'emoji info'])
         @commands.cooldown(1, 5, commands.BucketType.user)
         async def emojiinfo(self, ctx, emoji: discord.Emoji):
-            await ctx.send(f'`Name:` {emoji.name}\n`ID:` {emoji.id}\n`Preview:` {emoji} (`{emoji}`)\n`URL:` {emoji.url}\n`Created at:` {emoji.created_at.strftime("%A, %B %d %Y @ %H:%M:%S %p")}')
+            a = emoji.created_at
+            b = ctx.message.created_at
+            c = b-a
+            await ctx.send(f'`Name:` {emoji.name}\n`ID:` {emoji.id}\n`Preview:` {emoji} (`{emoji}`)\n`URL:` {emoji.url}\n`Created at:` {a.strftime("%A, %B %d %Y @ %H:%M:%S %p")} ({c.days} days ago)')
 
 
 def setup(bot):
