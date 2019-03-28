@@ -288,8 +288,8 @@ class Info():
                   dnd += 1
               g = online + idle + dnd
             m = ctx.guild.created_at
-            n = ctx.message.created_at
-            o = n-m
+            sugi = ctx.message.created_at
+            o = sugi-m
             em = discord.Embed(color=discord.Colour.orange())
             em.add_field(name='Name', value=f'{ctx.author.guild.name}', inline=True)
             em.add_field(name='Owner', value=f'{ctx.author.guild.owner.mention} [{ctx.author.guild.owner.id}]', inline=True)
