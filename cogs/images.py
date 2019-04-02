@@ -39,7 +39,7 @@ class Images():
                       return await ctx.send("**Tag a user to run this command.**")
               if member is not None:
                       em = discord.Embed(title=f"Hugs {member.name}!", color=0xe67e22)
-                      em.set_image(url=(random.choice(res['hug'])))
+                      em.set_image(url=(random.choice(res['kiss'])))
                       em.timestamp = datetime.datetime.utcnow()
                       return await ctx.send(embed=em)
 
@@ -52,7 +52,7 @@ class Images():
                         return await ctx.send("**Tag a user to run this command.**")
               if member is not None:
                         em = discord.Embed(title=f"Hugs {member.name}!", color=0xe67e22)
-                        em.set_image(url=(random.choice(res['hug'])))
+                        em.set_image(url=(random.choice(res['lick'])))
                         em.timestamp = datetime.datetime.utcnow()
                         return await ctx.send(embed=em)
 
@@ -66,7 +66,7 @@ class Images():
                         return await ctx.send("**Tag a user to run this command.**")
               if member is not None:
                         em = discord.Embed(title=f"Hugs {member.name}!", color=0xe67e22)
-                        em.set_image(url=(random.choice(res['hug'])))
+                        em.set_image(url=(random.choice(res['slap'])))
                         em.timestamp = datetime.datetime.utcnow()
                         return await ctx.send(embed=em)
 
@@ -79,7 +79,7 @@ class Images():
                         return await ctx.send("**Tag a user to run this command.**")
               if member is not None:
                         em = discord.Embed(title=f"Hugs {member.name}!", color=0xe67e22)
-                        em.set_image(url=(random.choice(res['hug'])))
+                        em.set_image(url=(random.choice(res['pat'])))
                         em.timestamp = datetime.datetime.utcnow()
                         return await ctx.send(embed=em)
 
@@ -92,7 +92,7 @@ class Images():
                         return await ctx.send("**Tag a user to run this command.**")
               if member is not None:
                         em = discord.Embed(title=f"Hugs {member.name}!", color=0xe67e22)
-                        em.set_image(url=(random.choice(res['hug'])))
+                        em.set_image(url=(random.choice(res['poke'])))
                         em.timestamp = datetime.datetime.utcnow()
                         return await ctx.send(embed=em)
 
