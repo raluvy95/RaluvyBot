@@ -139,7 +139,7 @@ class Info():
             if member.activity is None:
                   c = 'This user is not playing yet'
             if member.activity is not None:
-                  c = ctx.author.activity.name
+                  c = member.activity.name
             if not member.is_on_mobile():
                   d = "No"
             if member.is_on_mobile():
@@ -200,7 +200,7 @@ class Info():
                c = ctx.message.created_at
                d = c-b
                em = discord.Embed(title=f"{a.display_name}'s days age", color=discord.Color.blue())
-               em.add_field(name="Name", value=a.display_name, inline=True)
+               em.add_field(name="Name", value=a, inline=True)
                em.add_field(name="Created", value=b.strftime('%A, %B %d %Y @ %H:%M:%S %p'), inline=True)
                em.add_field(name="Account age", value=f"{d.days} days", inline=True)
                em.add_field(name="Avatar URL", value=f"[Link]({a.avatar_url})", inline=True)
