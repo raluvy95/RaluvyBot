@@ -167,7 +167,17 @@ async def new(ctx, *, oame=None):
             if oame == "partner" or oame == "partneriat":
                 await boi.send(f"{ctx.author.mention}, ```1. Nume si varsta?\n2. Cati membri ai (fara boti)?\n3. Cati boti ai?\n4. Nume server-ul?\n5. Ai citit reguli?```\n**Minim 50+ de membri fara boti!**")
             
-
+    elif ctx.author.guild.id == 576467053318373393:
+        if oame is None:
+            return await ctx.send("**Please use `,new {think}`**")
+        else:
+            boi = await ctx.guild.create_text_channel(name=oame)
+            owo = discord.utils.get(ctx.guild.roles, name="@everyone")
+            await boi.set_permissions(ctx.author, read_messages=True)
+            await boi.set_permissions(owo, read_messages=False)
+            await ctx.send(f"**Done! Please check in {boi.mention}!**")
+            if oame == "staff":
+                await boi.send(f"{ctx.author.mention},```1. Name and age?(Real name)\n2. Are you sure that you are active?\n3. If the user violated any rules, what should you do?\n4. Do you have any experience in Moderation? (If so list the name(s) of the server(s) you are a Moderator in.)\n5. How many hours a day can you be active?```")
     else:
         return
 
