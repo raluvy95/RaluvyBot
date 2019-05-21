@@ -179,7 +179,7 @@ async def new(ctx, *, oame=None):
             if oame == "staff":
                 await boi.send(f"{ctx.author.mention},```1. Name and age?(Real name)\n2. Are you sure that you are active?\n3. If the user violated any rules, what should you do?\n4. Do you have any experience in Moderation? (If so list the name(s) of the server(s) you are a Moderator in.)\n5. How many hours a day can you be active?```")
             if oame == 'partner':
-                await bot.send(f"{ctx.author.mention}, ```1. Name and age?(Real name)\n2. How many members (without boots)?\n 3. How many bots do you have?\n4. Name server?```")
+                await boi.send(f"{ctx.author.mention}, ```1. Name and age?(Real name)\n2. How many members (without boots)?\n 3. How many bots do you have?\n4. Name server?```")
     else:
         return
 
