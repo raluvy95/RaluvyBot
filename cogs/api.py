@@ -72,8 +72,8 @@ class API():
                         async with cs.get("https://some-random-api.ml/meme") as r:
                                 res = await r.json()
                                 embed = discord.Embed(color=discord.Colour.red())
-                                embed.title = (res['text'])
-                                embed.set_image(url=res['url'])
+                                embed.title = (res['caption'])
+                                embed.set_image(url=res['image'])
                                 embed.set_footer(text=f"{self.bot.user.name}")
                                 embed.timestamp = datetime.datetime.utcnow()
                                 await ctx.send(embed=embed)
@@ -87,6 +87,8 @@ class API():
                         async with cs.get(f'https://some-random-api.ml/pokedex?pokemon={name}') as r:
                                 res = await r.json()
                                 try:
+                                        bruh = ', '.join(g for g in res['type']
+                                        e = ', '.join(g for g in res['family']['evolutionLine']
                                         embed = discord.Embed(title=f"ID: {res['id']} | {res['name']}", description=res["description"] ,color=0x000000)
                                         embed.set_thumbnail(url=res['sprites']['animated'])
                                         embed.set_author(name="Pokedex", icon_url='https://vignette.wikia.nocookie.net/freebeerz/images/8/86/Pokeball_Icon.png/revision/latest?cb=20120430172421')
@@ -94,8 +96,9 @@ class API():
                                         embed.add_field(name="Height", value=res['height'], inline=True)
                                         embed.add_field(name="Weight", value=res['weight'], inline=True)
                                         embed.add_field(name="Base exprerience", value=res['base_experience'], inline=True)
-                                        embed.add_field(name="Types", value=res['types'], inline=True)
-                                        embed.add_field(name="Gender ratio", value=f"Male: {res['gender_ratio']['male']} Female: {res['gender_ratio']['female']}", inline=True)
+                                        embed.add_field(name="Type", value=bruh, inline=True)
+                                        embed.add_field(name="Gender ratio", value=' | '.join(g for g in res['gender']), inline=True)
+                                        embed.add_field(name="Evolution", value=e, inline=True)
                                         await ctx.send(embed=embed)
                                 except KeyError as key:
                                         await ctx.send(f"**Ops... {name} is not found in pokedex!**\nIf the name is correct, that means the API is in **BETA**")
