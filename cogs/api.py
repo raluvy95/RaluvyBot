@@ -101,7 +101,10 @@ class API():
                                         embed.add_field(name="Base exprerience", value=res['base_experience'], inline=True)
                                         embed.add_field(name="Type", value=bruh, inline=True)
                                         try:
-                                            embed.add_field(name="Gender ratio", value=' | '.join(g for g in res['gender']), inline=True)
+                                            if res['family']['evolutionStage'] <= 0:
+                                                embed.add_field(name="Gender ratio", value='null', inline=True)
+                                            else:
+                                                embed.add_field(name="Gender ratio", value=' | '.join(g for g in res['gender']), inline=True)
                                         except:
                                             embed.add_field(name="Gender ratio", value='null', inline=True)
                                         embed.add_field(name="Evolution", value=e, inline=True)
