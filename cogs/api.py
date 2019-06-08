@@ -87,8 +87,8 @@ class API():
                         async with cs.get(f'https://some-random-api.ml/pokedex?pokemon={name}') as r:
                                 res = await r.json()
                                 try:
-                                        bruh = ', '.join(g for g in res['type']
-                                        e = ', '.join(g for g in res['family']['evolutionLine']
+                                        bruh = ', '.join(g for g in res['type'])
+                                        e = ', '.join(g for g in res['family']['evolutionLine'])
                                         embed = discord.Embed(title=f"ID: {res['id']} | {res['name']}", description=res["description"] ,color=0x000000)
                                         embed.set_thumbnail(url=res['sprites']['animated'])
                                         embed.set_author(name="Pokedex", icon_url='https://vignette.wikia.nocookie.net/freebeerz/images/8/86/Pokeball_Icon.png/revision/latest?cb=20120430172421')
