@@ -90,18 +90,24 @@ class API():
                                         bruh = ', '.join(g for g in res['type'])
                                         e = ', '.join(g for g in res['family']['evolutionLine'])
                                         embed = discord.Embed(title=f"ID: {res['id']} | {res['name']}", description=res["description"] ,color=0x000000)
-                                        embed.set_thumbnail(url=res['sprites']['animated'])
+                                        try:
+                                            embed.set_thumbnail(url=res['sprites']['animated'])
+                                        except:
+                                            pass
                                         embed.set_author(name="Pokedex", icon_url='https://vignette.wikia.nocookie.net/freebeerz/images/8/86/Pokeball_Icon.png/revision/latest?cb=20120430172421')
                                         embed.add_field(name="Species", value=res['species'], inline=True)
                                         embed.add_field(name="Height", value=res['height'], inline=True)
                                         embed.add_field(name="Weight", value=res['weight'], inline=True)
                                         embed.add_field(name="Base exprerience", value=res['base_experience'], inline=True)
                                         embed.add_field(name="Type", value=bruh, inline=True)
-                                        embed.add_field(name="Gender ratio", value=' | '.join(g for g in res['gender']), inline=True)
+                                        try:
+                                            embed.add_field(name="Gender ratio", value=' | '.join(g for g in res['gender']), inline=True)
+                                        except:
+                                            embed.add_field(name="Gender ratio", value='null'), inline=True)
                                         embed.add_field(name="Evolution", value=e, inline=True)
                                         await ctx.send(embed=embed)
                                 except KeyError as key:
-                                        await ctx.send(f"**Ops... {name} is not found in pokedex!**\nIf the name is correct, that means the API is in **BETA**")
+                                        await ctx.send(f"**Ops... `{name}` is not found in pokedex!**")
 
                                                         
         @commands.command(aliases=['pika'])
