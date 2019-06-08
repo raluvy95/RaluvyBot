@@ -103,7 +103,7 @@ class API():
                                         try:
                                             embed.add_field(name="Gender ratio", value=' | '.join(g for g in res['gender']), inline=True)
                                         except:
-                                            embed.add_field(name="Gender ratio", value='null'), inline=True)
+                                            embed.add_field(name="Gender ratio", value='null', inline=True)
                                         embed.add_field(name="Evolution", value=e, inline=True)
                                         await ctx.send(embed=embed)
                                 except KeyError as key:
