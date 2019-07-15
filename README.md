@@ -1,3 +1,8 @@
+# Also DEAD
+This repostory is not **working** for newest discord.py version. If you want to rewrite it, [click here](https://github.com/raluvy95/MuffinBot).
+
+
+
 ![Image](logo.png)
 ## Welcome to RaluvyBot!
 [![Discord Bots](https://discordbots.org/api/widget/status/489061565430235136.svg?noavatar=true)](https://discordbots.org/bot/489061565430235136) [![Discord Bots](https://discordbots.org/api/widget/lib/489061565430235136.svg?noavatar=true)](https://discordbots.org/bot/489061565430235136)
